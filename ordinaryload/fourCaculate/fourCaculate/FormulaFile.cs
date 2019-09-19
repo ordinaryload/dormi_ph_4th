@@ -10,7 +10,7 @@ namespace fourArithmeticOperations
      * 将随机生成的四则混合运算存入文件中
      * 
      */
-    class FormulaFile
+    public class FormulaFile
     {
        
         public  void printFile(string result)

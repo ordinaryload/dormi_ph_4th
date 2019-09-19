@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace fourCaculate
 {
-    class Program
+    public class Program
     {
         private static int sumTotal;
         static void Main(string[] args)

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Text;
+using System.Threading;
 
 namespace fourArithmeticOperations
 {
@@ -8,13 +9,14 @@ namespace fourArithmeticOperations
      * 通过随机函数Random及其一些方法，来随机生成0-100数字，
      * 从而通过字符串的拼接得出公式
      */
-    class RandomFormula
+    public class RandomFormula
     {
-        private static String[] Operation = { "+", "-", "*", "/" };//设置四则运算字符串数组，通过后面随机选取来匹配
+        public static String[] Operation = { "+", "-", "*", "/" };//设置四则运算字符串数组，通过后面随机选取来匹配
         public String randFormula()
         {
             StringBuilder stringBuider = new StringBuilder();//为了便于操作字符串及一些性能，这里使用StringBuilder类
             long tick = DateTime.Now.Ticks;
+            Thread.Sleep(10);
             Random random = new Random((int)(tick & 0xffffffffL) | (int)(tick >> 32));
             int counts = (int)(random.NextDouble() * 2 + 2);//记录随机生成算式，运算符在 2 个 到 3 个之间。
             int start = 0;
@@ -40,7 +42,7 @@ namespace fourArithmeticOperations
                 }
 
                 start++;
-            }
+            }          
             return stringBuider.ToString();
         }
     }
