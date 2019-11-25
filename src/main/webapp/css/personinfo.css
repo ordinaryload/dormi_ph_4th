@@ -1,0 +1,28 @@
+.info_block .tr_content {
+    padding-left: 8px;
+    width: 300px;
+}
+.info_block td {
+    border-bottom: 1px dotted #CCCCCC;
+    line-height: 3.2em;
+}
+.save_block {
+    margin-top: 10px;
+    margin-left: 108px;
+}
+.btn_blue {
+    background-color: #AFD6D1;
+    border: 0;
+    color: White;
+    cursor: pointer;
+    display: block;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    height: 28px;
+    margin-left: 6px;
+    padding: 4px 0;
+    text-align: center;
+    text-decoration: none;
+    width: 54px;
+}

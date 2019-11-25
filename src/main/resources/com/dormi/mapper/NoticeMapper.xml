@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dormi.mapper.NoticeMapper">
+  <resultMap id="BaseResultMap" type="com.dormi.domain.Notice">
+
+    <id column="notice_id" jdbcType="INTEGER" property="noticeId" />
+    <result column="notice_file" jdbcType="VARCHAR" property="noticeFile" />
+    <result column="notice_title" jdbcType="VARCHAR" property="noticeTitle" />
+    <result column="notice_desc" jdbcType="VARCHAR" property="noticeDesc" />
+    <result column="notice_date" jdbcType="DATE" property="noticeDate" />
+  </resultMap>
+
+
+
+
+  <sql id="Example_Where_Clause">
+
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+
+    notice_id, notice_file, notice_title, notice_desc, notice_date
+  </sql>
+  <select id="selectByExample" parameterType="com.dormi.domain.NoticeExample" resultMap="BaseResultMap">
+
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from notice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+    select 
+    <include refid="Base_Column_List" />
+    from notice
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+
+    delete from notice
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dormi.domain.NoticeExample">
+
+    delete from notice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dormi.domain.Notice">
+
+    insert into notice (notice_id, notice_file, notice_title, 
+      notice_desc, notice_date)
+    values (#{noticeId,jdbcType=INTEGER}, #{noticeFile,jdbcType=VARCHAR}, #{noticeTitle,jdbcType=VARCHAR}, 
+      #{noticeDesc,jdbcType=VARCHAR}, #{noticeDate,jdbcType=DATE})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dormi.domain.Notice">
+
+    insert into notice
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="noticeId != null">
+        notice_id,
+      </if>
+      <if test="noticeFile != null">
+        notice_file,
+      </if>
+      <if test="noticeTitle != null">
+        notice_title,
+      </if>
+      <if test="noticeDesc != null">
+        notice_desc,
+      </if>
+      <if test="noticeDate != null">
+        notice_date,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="noticeId != null">
+        #{noticeId,jdbcType=INTEGER},
+      </if>
+      <if test="noticeFile != null">
+        #{noticeFile,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeTitle != null">
+        #{noticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeDesc != null">
+        #{noticeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeDate != null">
+        #{noticeDate,jdbcType=DATE},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dormi.domain.NoticeExample" resultType="java.lang.Long">
+
+    select count(*) from notice
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+
+    update notice
+    <set>
+      <if test="record.noticeId != null">
+        notice_id = #{record.noticeId,jdbcType=INTEGER},
+      </if>
+      <if test="record.noticeFile != null">
+        notice_file = #{record.noticeFile,jdbcType=VARCHAR},
+      </if>
+      <if test="record.noticeTitle != null">
+        notice_title = #{record.noticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="record.noticeDesc != null">
+        notice_desc = #{record.noticeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="record.noticeDate != null">
+        notice_date = #{record.noticeDate,jdbcType=DATE},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+
+    update notice
+    set notice_id = #{record.noticeId,jdbcType=INTEGER},
+      notice_file = #{record.noticeFile,jdbcType=VARCHAR},
+      notice_title = #{record.noticeTitle,jdbcType=VARCHAR},
+      notice_desc = #{record.noticeDesc,jdbcType=VARCHAR},
+      notice_date = #{record.noticeDate,jdbcType=DATE}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dormi.domain.Notice">
+
+    update notice
+    <set>
+      <if test="noticeFile != null">
+        notice_file = #{noticeFile,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeTitle != null">
+        notice_title = #{noticeTitle,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeDesc != null">
+        notice_desc = #{noticeDesc,jdbcType=VARCHAR},
+      </if>
+      <if test="noticeDate != null">
+        notice_date = #{noticeDate,jdbcType=DATE},
+      </if>
+    </set>
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dormi.domain.Notice">
+
+    update notice
+    set notice_file = #{noticeFile,jdbcType=VARCHAR},
+      notice_title = #{noticeTitle,jdbcType=VARCHAR},
+      notice_desc = #{noticeDesc,jdbcType=VARCHAR},
+      notice_date = #{noticeDate,jdbcType=DATE}
+    where notice_id = #{noticeId,jdbcType=INTEGER}
+  </update>
+  <select id="selectNotice" parameterType="com.dormi.domain.Notice" resultMap="BaseResultMap">
+    select * from notice ORDER BY notice_date DESC
+  </select>
+
+</mapper>

@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="dormi:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>dormi</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="dormi.war">
+      <element id="artifact" artifact-name="dormi:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dormi.mapper.EvaluationMapper">
+  <resultMap id="BaseResultMap" type="com.dormi.domain.Evaluation">
+
+    <id column="evaluation_id" jdbcType="INTEGER" property="evaluationId" />
+    <result column="evaluation_score" jdbcType="DOUBLE" property="evaluationScore" />
+    <result column="evaluation_date" jdbcType="DATE" property="evaluationDate" />
+    <result column="dorm_number" jdbcType="VARCHAR" property="dormNumber" />
+  </resultMap>
+
+  <resultMap id="seeShare" type="com.dormi.domain.Evaluation">
+    <id column="evaluation_id" property="evaluationId" />
+    <result column="evaluation_score" property="evaluationScore" />
+    <result column="evaluation_date" property="evaluationDate" />
+    <result column="dorm_number" property="dormNumber" />
+  </resultMap>
+
+  <sql id="Example_Where_Clause">
+
+    <where>
+      <foreach collection="oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Update_By_Example_Where_Clause">
+
+    <where>
+      <foreach collection="example.oredCriteria" item="criteria" separator="or">
+        <if test="criteria.valid">
+          <trim prefix="(" prefixOverrides="and" suffix=")">
+            <foreach collection="criteria.criteria" item="criterion">
+              <choose>
+                <when test="criterion.noValue">
+                  and ${criterion.condition}
+                </when>
+                <when test="criterion.singleValue">
+                  and ${criterion.condition} #{criterion.value}
+                </when>
+                <when test="criterion.betweenValue">
+                  and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                </when>
+                <when test="criterion.listValue">
+                  and ${criterion.condition}
+                  <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                    #{listItem}
+                  </foreach>
+                </when>
+              </choose>
+            </foreach>
+          </trim>
+        </if>
+      </foreach>
+    </where>
+  </sql>
+  <sql id="Base_Column_List">
+
+    evaluation_id, evaluation_score, evaluation_date, dorm_number
+  </sql>
+  <select id="selectByExample" parameterType="com.dormi.domain.EvaluationExample" resultMap="BaseResultMap">
+
+    select
+    <if test="distinct">
+      distinct
+    </if>
+    <include refid="Base_Column_List" />
+    from evaluation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+    <if test="orderByClause != null">
+      order by ${orderByClause}
+    </if>
+  </select>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+
+    select 
+    <include refid="Base_Column_List" />
+    from evaluation
+    where evaluation_id = #{evaluationId,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+
+    delete from evaluation
+    where evaluation_id = #{evaluationId,jdbcType=INTEGER}
+  </delete>
+  <delete id="deleteByExample" parameterType="com.dormi.domain.EvaluationExample">
+
+    delete from evaluation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </delete>
+  <insert id="insert" parameterType="com.dormi.domain.Evaluation">
+
+    insert into evaluation (evaluation_id, evaluation_score, evaluation_date, 
+      dorm_number)
+    values (#{evaluationId,jdbcType=INTEGER}, #{evaluationScore,jdbcType=DOUBLE}, #{evaluationDate,jdbcType=DATE}, 
+      #{dormNumber,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.dormi.domain.Evaluation">
+
+    insert into evaluation
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="evaluationId != null">
+        evaluation_id,
+      </if>
+      <if test="evaluationScore != null">
+        evaluation_score,
+      </if>
+      <if test="evaluationDate != null">
+        evaluation_date,
+      </if>
+      <if test="dormNumber != null">
+        dorm_number,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="evaluationId != null">
+        #{evaluationId,jdbcType=INTEGER},
+      </if>
+      <if test="evaluationScore != null">
+        #{evaluationScore,jdbcType=DOUBLE},
+      </if>
+      <if test="evaluationDate != null">
+        #{evaluationDate,jdbcType=DATE},
+      </if>
+      <if test="dormNumber != null">
+        #{dormNumber,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <select id="countByExample" parameterType="com.dormi.domain.EvaluationExample" resultType="java.lang.Long">
+
+    select count(*) from evaluation
+    <if test="_parameter != null">
+      <include refid="Example_Where_Clause" />
+    </if>
+  </select>
+  <update id="updateByExampleSelective" parameterType="map">
+
+    update evaluation
+    <set>
+      <if test="record.evaluationId != null">
+        evaluation_id = #{record.evaluationId,jdbcType=INTEGER},
+      </if>
+      <if test="record.evaluationScore != null">
+        evaluation_score = #{record.evaluationScore,jdbcType=DOUBLE},
+      </if>
+      <if test="record.evaluationDate != null">
+        evaluation_date = #{record.evaluationDate,jdbcType=DATE},
+      </if>
+      <if test="record.dormNumber != null">
+        dorm_number = #{record.dormNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByExample" parameterType="map">
+
+    update evaluation
+    set evaluation_id = #{record.evaluationId,jdbcType=INTEGER},
+      evaluation_score = #{record.evaluationScore,jdbcType=DOUBLE},
+      evaluation_date = #{record.evaluationDate,jdbcType=DATE},
+      dorm_number = #{record.dormNumber,jdbcType=VARCHAR}
+    <if test="_parameter != null">
+      <include refid="Update_By_Example_Where_Clause" />
+    </if>
+  </update>
+  <update id="updateByPrimaryKeySelective" parameterType="com.dormi.domain.Evaluation">
+
+    update evaluation
+    <set>
+      <if test="evaluationScore != null">
+        evaluation_score = #{evaluationScore,jdbcType=DOUBLE},
+      </if>
+      <if test="evaluationDate != null">
+        evaluation_date = #{evaluationDate,jdbcType=DATE},
+      </if>
+      <if test="dormNumber != null">
+        dorm_number = #{dormNumber,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where evaluation_id = #{evaluationId,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.dormi.domain.Evaluation">
+
+    update evaluation
+    set evaluation_score = #{evaluationScore,jdbcType=DOUBLE},
+      evaluation_date = #{evaluationDate,jdbcType=DATE},
+      dorm_number = #{dormNumber,jdbcType=VARCHAR}
+    where evaluation_id = #{evaluationId,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectEvaluation" parameterType="com.dormi.domain.Evaluation" resultMap="BaseResultMap">
+    select * from evaluation ORDER BY evaluation_date DESC
+  </select>
+</mapper>
