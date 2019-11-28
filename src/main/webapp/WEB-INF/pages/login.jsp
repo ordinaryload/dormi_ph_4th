@@ -81,7 +81,7 @@
         </div>
     </div>
 </div>
-<p style="color:#fff;text-align: center;">Copyright © 2017.Company name All rights X-admin </p>
+<p style="color:#fff;text-align: center;">Copyright © 2019.Company name All rights DorMi </p>
 <script src="/lib/layui/layui.js" charset="utf-8">
 </script>
 

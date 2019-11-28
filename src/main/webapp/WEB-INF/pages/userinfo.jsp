@@ -36,7 +36,7 @@
                     姓名：
                 </td>
                 <td class="tr_content">
-                    <input class="tb_m" id="txt_name" name="RealName" type="text" value="${administrators.adminName}" />
+                    <text class="tb_m">${administrators.adminName}</text>
                 </td>
 
             </tr>
@@ -45,7 +45,7 @@
                     工号：
                 </td>
                 <td class="tr_content">
-                    <input class="tb_m" id="txt_no" name="Number" type="text" value="${administrators.adminCard}" />
+                    <text class="tb_m">${administrators.adminCard}</text>
                 </td>
 
             </tr>
@@ -54,7 +54,7 @@
                     宿舍楼：
                 </td>
                 <td class="tr_content">
-                    <input class="tb_m" id="txt_louno" name="Louno" type="text" value="${administrators.adminBuilding}" />
+                    <text class="tb_m">${administrators.adminBuilding}</text>
                 </td>
 
             </tr>
@@ -63,14 +63,12 @@
                     手机号：
                 </td>
                 <td class="tr_content">
-                    <input class="tb_m" id="txt_phone" name="Phone" type="text" value="${administrators.adminPhone}" />
+                    <text class="tb_m">${administrators.adminPhone}</text>
                 </td>
-
             </tr>
 
         </table>
         <div class="save_block">
-            <input type="submit" class="btn_blue" name="btnSubmit" value="保存" onclick="return UpdateProfile();" id="btn_submit">
             <div class="text_red" style="height: 3em; line-height: 3em;">
                 <span id="lit_tip"></span>
             </div>

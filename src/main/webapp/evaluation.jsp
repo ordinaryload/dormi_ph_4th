@@ -78,7 +78,7 @@
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <xblock><button class="layui-btn layui-btn-danger" onclick="findAllScore()"><i class="layui-icon">&#xe640;</i>点击刷新</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
+    <xblock><button class="layui-btn layui-btn-normal" onclick="findAllScore()"><i class="layui-icon">&#xe666;</i>点击刷新</button><span class="x-right" style="line-height:40px">共有数据：88 条</span></xblock>
     <!--<p onclick="findAllRegistration()">查看</p>-->
     <table class="layui-table">
         <thead>

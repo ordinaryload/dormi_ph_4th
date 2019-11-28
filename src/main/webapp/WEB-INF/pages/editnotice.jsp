@@ -72,9 +72,17 @@
 </script>
 
 <script type="text/javascript">
-
+    function CheckinnerHTML(sl) {
+        var s="公告:";
+        return s+s1;
+    }
     function updateNotice(){
-        var json = {"noticeId":${oneNotice.noticeId},"noticeTitle":$("#noticeTitle").val(),"noticeDesc":$("#noticeDesc").val()};
+        var noticeTitle = $("#noticeTitle").val();
+        var noticeTitle2 = CheckinnerHTML(noticeTitle);
+        console.log(noticeTitle2);
+        var noticeDesc = $("#noticeDesc").val();
+        var noticeDesc2 = CheckinnerHTML(noticeDesc);
+        var json = {"noticeId":${oneNotice.noticeId},"noticeTitle":noticeTitle2,"noticeDesc":noticeDesc2};
         $.ajax(
             {
                 // cache:true,
