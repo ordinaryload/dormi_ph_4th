@@ -47,6 +47,7 @@
                                 <cite>登记分数</cite>
                             </a>
                         </dd>
+
                         <dd class="">
                             <a href="javascript:;" _href="./evaluation.jsp">
                                 <cite>查看分数</cite>

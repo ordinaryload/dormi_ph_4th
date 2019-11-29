@@ -20,6 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="./css/x-admin.css" media="all">
 </head>
+
 <body>
 <div class="x-nav">
             <span class="layui-breadcrumb">

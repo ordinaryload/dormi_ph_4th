@@ -82,6 +82,7 @@
     <!--<p onclick="findAllRegistration()">查看</p>-->
     <table class="layui-table">
         <thead>
+
         <tr>
             <th>
                 宿舍

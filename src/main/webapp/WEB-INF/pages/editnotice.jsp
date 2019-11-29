@@ -29,6 +29,7 @@
         height:400px;
     }
 </style>
+
 <body>
 <div class="x-body">
     <form class="layui-form">
