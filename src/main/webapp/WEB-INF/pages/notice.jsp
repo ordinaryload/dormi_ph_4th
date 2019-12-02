@@ -144,7 +144,7 @@
                             "</td>\n" +
                             "<td>\n" +
                             "<a href=\"http://47.100.95.101:8080"+item.noticeFile+"\" target='_blank'>"+
-                            "<img  src=\"/images/file.png\" width=\"200\" alt=\"\"></a>\n" +
+                            "<img  src=\"/images/file.png\" width=\"100\" height=\"100\" alt=\"\"></a>\n" +
                             "</td>\n" +
                             "<td >\n" + item.noticeDesc +
                             "</td>\n" +
