@@ -23,6 +23,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <body>
+
 <div class="x-body">
     <blockquote class="layui-elem-quote" style="text-align: center;font-family:Georgia, 'Times New Roman', Times, serif;font-size: 20px;color:#86BBD4">
         Welcome to DorMi 宿舍管理系统！
