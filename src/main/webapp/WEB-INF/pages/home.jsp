@@ -1,16 +1,10 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: 许你长欢
-  Date: 2019/10/23
-  Time: 9:46
-  To change this template use File | Settings | File Templates.
---%>
+
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <meta charset="utf-8">
     <title>
-        X-admin v1.0
+        DorMi
     </title>
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
@@ -20,25 +14,24 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
     <div class="layui-header header header-demo">
         <div class="layui-main">
-            <a class="logo" href="../../index.html">
+            <text class="logo">
                 DorMi
-            </a>
+            </text>
             <ul class="layui-nav" lay-filter="">
                 <li class="layui-nav-item"><img src="../../images/logo.png" class="layui-circle" style="border: 2px solid #A9B7B7;" width="35px" alt=""></li>
                 <li class="layui-nav-item">
                     <a href="javascript:;">用户</a>
                     <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                        <dd><a href="">个人信息</a></dd>
-                        <dd><a href="">切换帐号</a></dd>
-                        <dd><a href="../../login.html">退出</a></dd>
+                        <dd><a href="/webUser/webToLogin">切换帐号</a></dd>
+                        <dd><a href="/webUser/webToLogin">退出</a></dd>
                     </dl>
                 </li>
-                <li class="layui-nav-item x-index"><a href="/">前台首页</a></li>
             </ul>
         </div>
     </div>

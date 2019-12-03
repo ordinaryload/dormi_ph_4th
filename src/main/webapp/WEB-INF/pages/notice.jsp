@@ -19,13 +19,14 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <body>
 <div class="x-nav">
     <a class="layui-btn layui-btn-small" style="line-height:1.6em;margin-top:3px;float:right"  href="javascript:location.replace(location.href);" title="刷新"><i class="layui-icon" style="line-height:30px">ဂ</i></a>
 </div>
 <div class="x-body">
-    <xblock><button class="layui-btn layui-btn-danger" onclick="findAllNotice()"><i class="layui-icon">&#xe640;</i>点击刷新</button><span class="x-right" style="line-height:40px"></span></xblock>
+    <xblock><button class="layui-btn layui-btn-normal" onclick="findAllNotice()"><i class="layui-icon">&#xe666;</i>点击刷新</button><span class="x-right" style="line-height:40px"></span></xblock>
     <table class="layui-table">
         <thead>
         <tr>
@@ -143,7 +144,7 @@
                             "</td>\n" +
                             "<td>\n" +
                             "<a href=\"http://47.100.95.101:8080"+item.noticeFile+"\" target='_blank'>"+
-                            "<img  src=\"/images/file.png\" width=\"200\" alt=\"\"></a>\n" +
+                            "<img  src=\"/images/file.png\" width=\"100\" alt=\"\"></a>\n" +
                             "</td>\n" +
                             "<td >\n" + item.noticeDesc +
                             "</td>\n" +
