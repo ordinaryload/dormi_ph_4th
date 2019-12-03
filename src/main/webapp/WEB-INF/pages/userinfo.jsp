@@ -20,6 +20,7 @@
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
     <link rel="stylesheet" href="/css/personinfo.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <body>
 <div class="x-body">
@@ -75,6 +76,7 @@
         </div>
         <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DeHXSeUWr9KtnvAGu7_dX_wDKUd83ztpD0CRMfzsVhXZNnglcTdxXyqtnl1ah8j2sQsVnDwgRiIMt1Rdt5KVRrShoSd5bx9q3pwRrfJGRgzn5ztjyDJ37KreTqt37k-24sG5Txb9D4GlKfbJB1dr3G4Uq_cUOpMQsWGF3K8fERcfsy6OTo0xByK_WFE_DPTQQ" /><input name="IsHome_RealName" type="hidden" value="false" /><input name="IsHome_Gender" type="hidden" value="false" /><input name="IsHome_Birthday" type="hidden" value="false" /><input name="IsHome_Hometown" type="hidden" value="false" /><input name="IsHome_Reside" type="hidden" value="false" /><input name="IsHome_Marriage" type="hidden" value="false" /><input name="IsHome_Position" type="hidden" value="false" /><input name="IsHome_Company" type="hidden" value="false" /><input name="IsHome_WorkStatus" type="hidden" value="false" />
     </form>
+
 
 
 </div>

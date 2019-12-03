@@ -22,6 +22,7 @@
     <script src="/js/jquery-3.2.1.min.js"></script>
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 
 <!--<body style="background-color: #CFEDE9">-->

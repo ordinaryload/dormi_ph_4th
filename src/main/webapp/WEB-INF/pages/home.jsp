@@ -14,6 +14,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <body>
 <div class="layui-layout layui-layout-admin">
@@ -47,7 +48,6 @@
                                 <cite>登记分数</cite>
                             </a>
                         </dd>
-
                         <dd class="">
                             <a href="javascript:;" _href="./evaluation.jsp">
                                 <cite>查看分数</cite>

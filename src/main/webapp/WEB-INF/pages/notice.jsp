@@ -12,7 +12,6 @@
     <title>
         查看公告信息
     </title>
-
     <meta name="renderer" content="webkit">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -20,6 +19,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="format-detection" content="telephone=no">
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <body>
 <div class="x-nav">
@@ -144,7 +144,7 @@
                             "</td>\n" +
                             "<td>\n" +
                             "<a href=\"http://47.100.95.101:8080"+item.noticeFile+"\" target='_blank'>"+
-                            "<img  src=\"/images/file.png\" width=\"100\" height=\"100\" alt=\"\"></a>\n" +
+                            "<img  src=\"/images/file.png\" width=\"100\" alt=\"\"></a>\n" +
                             "</td>\n" +
                             "<td >\n" + item.noticeDesc +
                             "</td>\n" +

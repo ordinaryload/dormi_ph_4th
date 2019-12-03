@@ -21,15 +21,16 @@
     <meta name="format-detection" content="telephone=no">
     <script src="/js/jquery-3.2.1.min.js"></script>
     <link rel="stylesheet" href="/css/x-admin.css" media="all">
+    <link rel="shortcut icon" type="image/x-icon" href="images/logo.ico" />
 </head>
 <style>
     .inputcss
     {
         width:500px;
         height:400px;
+        background-color: #AFD6D1;
     }
 </style>
-
 <body>
 <div class="x-body">
     <form class="layui-form">
@@ -47,7 +48,7 @@
                 <span class="x-red">*</span>简要描述
             </label>
             <div class="layui-input-inline">
-                <input type="text" id="noticeDesc" value="${oneNotice.noticeDesc}" name="noticeDesc" class="inputcss" width="1000px">
+                <input type="text" id="noticeDesc" value="${oneNotice.noticeDesc}" name="noticeDesc" class="inputcss" style="background-color: #AFD6D1" width="1000px">
             </div>
         </div>
         <div class="layui-form-item">
